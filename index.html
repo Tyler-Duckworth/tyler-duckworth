@@ -4,11 +4,38 @@
   <meta charset="utf-8">
   <title>FRC Team Search</title>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <body>
   <h1>FRC Team Search</h1>
   <p>
     <label>Team Number: </label>
-    <input type="text" id="teamNum" value=""/>
+    <input type="text" id="teamNum" value="" ng-model = "teamID"/>
   </p>
+  <p>{{myResult}}</p>
+  <script>
+    angular.module('frcApp', [])
+.controller('dialouge', function ($http, $scope) {
+    var baseURL = 'https://www.thebluealliance.com/api/v3';
+    
+    var confignewtons= {
+            'Accept': 'application/json;odata=verbose',
+            'x-tba-app-id': 'frc3966:team-analysis:0.2',
+        };
+    
+    function getInfo(teamID){
+        teamID = 'frc' + teamID.toString();
+        return $http({
+            method: 'GET',
+            url: baseURL + '/teams/' + teamid,
+            headers: confignewtons
+        }).then(function result(response) {
+            $scope.myResult = response.data;
+        }
+        function result(response) {
+          $scope.myResult = response.statusText 
+        });
+    }});
+
+  </script>
 </body>
 </html>
