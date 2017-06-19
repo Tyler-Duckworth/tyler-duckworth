@@ -8,7 +8,7 @@
   <h1>FRC Team Search</h1>
   <p>
     <label>Team Number: </label>
-    <input type="text" id="teamNum" value="" ng-model = "teamID"/>
+    <input type="text" id="teamNum" value="" ng-model = "team"/>
   </p>
   <h1 ng-bind="myResult"></h1>
   <script>
@@ -22,7 +22,7 @@
         };
     
     function getInfo(teamID){
-        teamID = 'frc' + teamID.toString();
+        teamID = 'frc' + team.toString();
         return $http({
             method: 'GET',
             url: baseURL + '/teams/' + teamid,
