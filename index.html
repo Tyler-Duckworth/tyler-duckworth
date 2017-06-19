@@ -10,7 +10,7 @@
     <label>Team Number: </label>
     <input type="text" id="teamNum" value="" ng-model = "team"/>
   </p>
-  <h1 ng-bind="myResult"></h1>
+  <h1>{{myResult}}</h1>
   <script>
     angular.module('frcApp', [])
 .controller('dialouge', function ($http, $scope) {
