@@ -17,7 +17,7 @@
     if (inputty !== undefined) {
 	    $('#button').click(function() {
         $.ajax({
-            url: 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString(),
+            url: 'https://www.thebluealliance.com/api/v3/team/frc${inputty}',
             headers: {
             'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
         },
