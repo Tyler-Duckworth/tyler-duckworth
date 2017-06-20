@@ -12,8 +12,8 @@
   </p>
   <h1>{{myResult}}</h1>
   <script>
-    angular.module('frcApp', [])
-.controller('dialouge', function ($http, $scope) {
+    var app = angular.module('frcApp', []);
+    app.controller('dialouge', function ($http, $scope) {
     var baseURL = 'https://www.thebluealliance.com/api/v3';
     
     var confignewtons= {
