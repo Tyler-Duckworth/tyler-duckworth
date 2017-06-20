@@ -3,14 +3,14 @@
   <meta charset="utf-8">
   <title>FRC Team Search</title>
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body ng-app="frcApp">
   <h1>FRC Team Search</h1>
   <p>
     <label>Team Number: </label>
     <input type="text" id="teamNum" value="" ng-model = "team"/>
   </p>
-  <h1>{{myResult}}</h1>
+  <h1 id="myResult"></h1>
   <script>
     var app = angular.module('frcApp', []);
     app.controller('dialouge', function ($http, $scope) {
