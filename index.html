@@ -4,36 +4,29 @@
   <title>FRC Team Search</title>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<body ng-app="frcApp">
+<body>
   <h1>FRC Team Search</h1>
   <p>
     <label>Team Number: </label>
-    <input type="text" id="teamNum" value="" ng-model = "team"/>
+    <input type="text" id="teamNum" value="" />
   </p>
-  <h1 id="myResult"></h1>
+  <p id="myResult"></p>
   <script>
-    var app = angular.module('frcApp', []);
-    app.controller('dialouge', function ($http, $scope) {
-    var baseURL = 'https://www.thebluealliance.com/api/v3';
-    
-    var confignewtons= {
-            'Accept': 'application/json;odata=verbose',
-            'x-tba-app-id': 'frc3966:team-analysis:0.2',
-        };
-    
-    function getInfo(teamID){
-        teamID = 'frc' + team.toString();
-        return $http({
-            method: 'GET',
-            url: baseURL + '/teams/' + teamid,
-            headers: confignewtons
-        }).then(function result(response) {
-            $scope.myResult = response.data;
-        }
-        function result(response) {
-          $scope.myResult = response.statusText 
-        });
-    }});
+    var inputty = $('#teamNum').val();
+    if (inputty !== undefined) {
+      $.ajax({
+        url: 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString(),
+        headers: {
+          'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
+        },
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+    	  var dates = JSON.stringify(data);
+        $('p#myResult').append(data);
+      }
+    });
+  }
   </script>
 </body>
 </html>
