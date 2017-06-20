@@ -9,22 +9,25 @@
   <p>
     <label>Team Number: </label>
     <input type="text" id="teamNum" value="" />
+    <button id="button">Submit</button>
   </p>
   <p id="myResult"></p>
   <script>
     var inputty = $('#teamNum').val();
     if (inputty !== undefined) {
-      $.ajax({
-        url: 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString(),
-        headers: {
-          'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
+	    $('#button').click(function() {
+        $.ajax({
+            url: 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString(),
+            headers: {
+            'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
         },
         method: 'GET',
         dataType: 'json',
         success: function(data) {
-    	  var dates = JSON.stringify(data);
-        $('p#myResult').append(data);
-      }
+    	    var dates = JSON.stringify(data);
+          $('#myResult').append(data);
+        }
+      });
     });
   }
   </script>
