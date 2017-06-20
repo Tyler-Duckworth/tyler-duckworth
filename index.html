@@ -15,15 +15,14 @@
   <script>
     var inputty = $('#teamNum').val();
     var sputty = String(inputty);
-    console.log(inputty);
-    console.log(sputty);
     if (inputty !== undefined) {
 	    $('#button').click(function() {
-        $.ajax({
-            url: 'https://www.thebluealliance.com/api/v3/team/frc${sputty}',
-            headers: {
-            'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
-        },
+		var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
+        	$.ajax({
+            		url: ,
+            		headers: {
+            			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
+        	},
         method: 'GET',
         dataType: 'json',
         success: function(data) {
