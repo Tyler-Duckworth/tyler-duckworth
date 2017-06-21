@@ -29,7 +29,6 @@
 		dataType: 'json',
 		success: function(data) {
 	    console.log(data);
-	    console.log(datas);
 	    for(var key in data) {
 		    $('#result').append('<dt>' + key + '</dt><dd>' + data[key] + '</dd>');
 	    }
