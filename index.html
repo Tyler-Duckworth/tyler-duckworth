@@ -31,11 +31,12 @@
 	    for(var key in data) {
 	      if(data[key] !== null & data[key] !== "") {
 		    var keys;
-		    if(key.indexOf('_') !== -1 ) {
-		       	keys = key.replace('_', ' ');
+		    if(key.indexOf('_prov') !== -1) {
+			keys = key.replace('_prov', '');
+		       	
 		     }
-		     else if (key.indexOf('_prov') !== -1) {
-			     keys = key.replace('_prov', '');
+		     else if (key.indexOf('_') !== -1 ) {
+			  keys = key.replace('_', ' ');   
 		     }
 		     else {
 			keys = key;     
