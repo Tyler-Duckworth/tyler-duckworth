@@ -38,7 +38,7 @@
 		     else {
 			keys = key;     
 		     }
-		    $('#result').append('<dt>' + keys + '</dt><dd>' + data[key] + '</dd>');
+		    $('#result').append("<dt class='title' id='" + key + "'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
 	      }
 	    }
 	    var dates = JSON.stringify(data);
