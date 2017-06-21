@@ -31,7 +31,14 @@
 	    console.log(data);
 	    for(var key in data) {
 	      if(data[key] !== null & data[key] !== "") {
-		    $('#result').append('<dt>' + key + '</dt><dd>' + data[key] + '</dd>');
+		    var keys;
+		    if(key.indexOf('_') !== -1 ) {
+		       	keys = key.replace('_', ' ');
+		     }
+		     else {
+			keys = key;     
+		     }
+		    $('#result').append('<dt>' + keys + '</dt><dd>' + data[key] + '</dd>');
 	      }
 	    }
 	    var dates = JSON.stringify(data);
