@@ -27,7 +27,9 @@
 		method: 'GET',
 		dataType: 'json',
 		success: function(data) {
+		var datas = data.makeArray();
 	    console.log(data);
+	    console.log(datas);
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 		}
