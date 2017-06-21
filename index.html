@@ -14,10 +14,10 @@
   <p id="myResult"></p>
   <script>
     $(document).ready(function() {
-    var inputty = $('#teamNum').val();
-    var sputty = String(inputty);
     if (inputty !== undefined) {
 	    $('#button').click(function() {
+		var inputty = $('#teamNum').val();
+    		var sputty = String(inputty);
 		var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
         	console.log(urls);
 		$.ajax({
