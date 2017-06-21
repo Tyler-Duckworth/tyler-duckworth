@@ -12,7 +12,8 @@
     <button id="button">Submit</button>
   </p>
   <p id="myResult"></p>
-  <script>
+	<dl id="result"></dl>
+  <script> 
 	 $(document).ready(function() {
 		$('#button').click(function() {
 			var inputty = $('#teamNum').val();
@@ -30,6 +31,9 @@
 		var datas = data.makeArray();
 	    console.log(data);
 	    console.log(datas);
+	    for(var key in data) {
+		    $('#result').append('<dt>' + key + '</dt><dd>' + data[key] + '</dd>');
+	    }
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 		}
