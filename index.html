@@ -13,28 +13,27 @@
   </p>
   <p id="myResult"></p>
   <script>
-    $(document).ready(function() {
-    if (inputty !== undefined) {
-	    $('#button').click(function() {
-		var inputty = $('#teamNum').val();
-    		var sputty = String(inputty);
-		var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
-        	console.log(urls);
-		$.ajax({
-            		url: 'https://www.thebluealliance.com/api/v3/team/frc3966',
-            		headers: {
-            			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'
-        	},
-        method: 'GET',
-        dataType: 'json',
-        success: function(data) {
-    	    var dates = JSON.stringify(data);
-          $('#myResult').append(data);
-        }
-      });
-    });
-  }
-    });
+	 $(document).ready(function() {
+		$('#button').click(function() {
+			var inputty = $('#teamNum').val();
+			if (inputty !== undefined) {
+		var sputty = String(inputty);
+			var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
+		console.log(urls);
+			$.ajax({
+		    url: 'https://www.thebluealliance.com/api/v3/team/frc3966',
+		    headers: {
+			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
+		method: 'GET',
+		dataType: 'json',
+		success: function(data) {
+	    var dates = JSON.stringify(data);
+	    $('#myResult').append(data);
+		}
+	      });
+	    }
+	  });
+	    });
   </script>
 </body>
 </html>
