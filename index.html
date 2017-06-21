@@ -34,6 +34,9 @@
 		    if(key.indexOf('_') !== -1 ) {
 		       	keys = key.replace('_', ' ');
 		     }
+		     elseif (key.indexOf('_prov') !== -1) {
+			     keys = key.replace('_prov', '');
+		     }
 		     else {
 			keys = key;     
 		     }
