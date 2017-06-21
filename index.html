@@ -30,7 +30,7 @@
 		success: function(data) {
 	    console.log(data);
 	    for(var key in data) {
-	      if(data[key] !== null) {
+	      if(data[key] !== null & data[key] !== "") {
 		    $('#result').append('<dt>' + key + '</dt><dd>' + data[key] + '</dd>');
 	      }
 	    }
