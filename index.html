@@ -34,7 +34,7 @@
 		dataType: 'json',
 		success: function(data) {
 	    for(var key in data) {
-	      if(data[key] !== null & data[key] !== "") {
+	      if(data[key] !== null & data[key] !== "[object Object]") {
 		    var keys;
 		    if(key.indexOf('_prov') !== -1) {
 			keys = key.replace('_prov', '');
