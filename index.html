@@ -34,7 +34,7 @@
 		dataType: 'json',
 		success: function(data) {
 	    for(var key in data) {
-	      if(data[key] !== null & data[key].toString() !== '[object Object]') {
+	      if(data[key] !== null & jQuery.type(data[key]) !== 'object') {
 		    var keys;
 		    if(key.indexOf('_prov') !== -1) {
 			keys = key.replace('_prov', '');
