@@ -14,7 +14,8 @@
   <p>
     <label>Team Number: </label>
     <input type="text" id="teamNum" value="" />
-    <button id="button">Submit</button>
+    <button id="button">Search</button>
+	  <button id="clear">Clear</button>
   </p>
   <p id="myResult"></p>
 	<dl id="result"></dl>
@@ -54,6 +55,10 @@
 		}
 	      });
 	    }
+	  });
+          $('#clear').click(function () {
+		$('#teamNum').val('');
+		$('#result').append('');  
 	  });
 	    });
   </script>
