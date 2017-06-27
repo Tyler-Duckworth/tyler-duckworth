@@ -66,14 +66,20 @@
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 	    	  $('#rookie').click(function () {
-		  urlss = urls + '/events/' + data['rookie_year'].toString();
+		   var urlss = urls + '/events/' + data['rookie_year'].toString();
 		  console.log(urlss);
-		  /*$.ajax({
+		  $.ajax({
 		    url: urls,
 		    headers: {
 			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
 		    method: 'GET',
-		    dataType: 'json',});*/
+		    dataType: 'json',
+		    success: function(datas) {
+		    	for(var codes in datas) {
+				console.log(datas[codes]);
+			}
+		    }
+		  });
 	  });
 		}
 	      });
