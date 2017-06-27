@@ -79,11 +79,12 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var codes in datas) {
+			   if(datas[codes] !== null  & jQuery.type(datas[codes]) !== 'object') {
 				var doc = new jsPDF();
 				var code = codes.toString();
 				var sata = datas[codes].toString();
 				doc.text(20, 20, code.toUpperCase() + sata.toUpperCase());
-			}
+			}}
 			doc.save(inputty.toString() + 'rookieevents.pdf');
 		    }
 		  });
