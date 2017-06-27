@@ -82,13 +82,7 @@
 				var doc = new jsPDF();
 			if(datas[codes] !== null  & jQuery.type(datas[codes]) !== 'object') {
 				var code = codes.toString();
-				code = code.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    					return letter.toUpperCase();
-				});
 				var sata = datas[codes].toString();
-				sata = sata.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    					return letter.toUpperCase();
-				});
 				doc.text(20, 20, code.toUpperCase() + ': ' + sata.toUpperCase());
 			}}
 			doc.save(inputty.toString() + 'rookieevents.pdf');
