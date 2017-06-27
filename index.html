@@ -19,7 +19,6 @@
 </head>
 <!--Source for JQuery v 3.2.1-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 	
 <body style="background-color: #424242; color: white;">
   	
@@ -67,6 +66,8 @@
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 	    	  $('#rookie').click(function () {
+			$('#teamNum').val('');
+			$('#result').empty(); 
 		   var inputty = $('#teamNum').val();
         	   var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
 		   var urlss = urls + '/events/' + data['rookie_year'].toString();
@@ -77,23 +78,13 @@
 			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
 		    method: 'GET',
 		    dataType: 'json',
-		    success: function(data) {
-		    	for(var codes in data) {
+		    success: function(datas) {
+		    	for(var code in datas) {
 				console.log(data[codes]);
-				var doc = new jsPDF();
-			  if(data[key] !== null & jQuery.type(data[key]) !== 'object') {
-			
-				var code = codes.toString();
-				code = code.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    					return letter.toUpperCase();
-				});
-				var sata = data[codes].toString();
-				sata = sata.toLowerCase().replace(/\b[a-z]/g, function(letter) {
-    					return letter.toUpperCase();
-				});
-				doc.text(20, 20, code + ': ' + sata);
+			  if(datas[code] !== null & jQuery.type(datas[code]) !== 'object') {
+	  		    $('#result').append("<dt class='title' id='" + code + "' style='text-transform: capitalize;'>" + code + "</dt><dd class='definition' id='" + key + "'>" + datas[code] + "</dd>");
 			}}
-			doc.save(inputty.toString() + 'rookieevents.pdf');
+			
 		    }
 		  });
 	  });
