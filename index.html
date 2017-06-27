@@ -73,6 +73,16 @@
 		$('#teamNum').val('');
 		$('#result').empty();  
 	  });
+	  $('#rookie').click(function () {
+		  urlss = urls + '/events/' + data['rookie_year'].toString();
+		  console.log(urlss);
+		  /*$.ajax({
+		    url: urls,
+		    headers: {
+			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
+		    method: 'GET',
+		    dataType: 'json',});*/
+	  });
 	    });
   </script>
 </body>
