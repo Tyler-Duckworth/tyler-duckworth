@@ -79,6 +79,7 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var codes in datas) {
+				console.log(datas[codes]);
 				var doc = new jsPDF();
 			  if(datas[codes] !== null ) {
 			
