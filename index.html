@@ -79,8 +79,8 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var codes in datas) {
-			  if(datas[codes] !== null ) {
 				var doc = new jsPDF();
+			  if(datas[codes] !== null ) {
 			
 				var code = codes.toString();
 				code = code.toLowerCase().replace(/\b[a-z]/g, function(letter) {
