@@ -77,17 +77,17 @@
 			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
 		    method: 'GET',
 		    dataType: 'json',
-		    success: function(datas) {
-		    	for(var codes in datas) {
-				console.log(datas[codes]);
+		    success: function(data) {
+		    	for(var codes in data) {
+				console.log(data[codes]);
 				var doc = new jsPDF();
-			  if(datas[codes] !== null ) {
+			  if(data[key] !== null & jQuery.type(data[key]) !== 'object') {
 			
 				var code = codes.toString();
 				code = code.toLowerCase().replace(/\b[a-z]/g, function(letter) {
     					return letter.toUpperCase();
 				});
-				var sata = datas[codes].toString();
+				var sata = data[codes].toString();
 				sata = sata.toLowerCase().replace(/\b[a-z]/g, function(letter) {
     					return letter.toUpperCase();
 				});
