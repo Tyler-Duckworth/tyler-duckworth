@@ -49,6 +49,7 @@
 	    for(var key in data) {
 	      if(data[key] !== null & jQuery.type(data[key]) !== 'object') {
 		    var keys;
+		    var result;
 		    if(key.indexOf('_prov') !== -1) {
 			keys = key.replace('_prov', '');
 		       	
@@ -59,7 +60,13 @@
 		     else {
 			keys = key;     
 		     }
-		    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
+		     if(key = 'name' & data[key].indexOf('/') !== -1) {
+			result = data[key].replace('/', ', ');
+		     }
+		      else {
+			result = data[key];      
+		      }
+		    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + result + "</dd>");
 	      }
 	    }
 	    var dates = JSON.stringify(data);
