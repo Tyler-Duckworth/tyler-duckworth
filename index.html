@@ -65,15 +65,7 @@
 	    }
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
-		}
-	      });
-	    }
-	  });
-          $('#clear').click(function () {
-		$('#teamNum').val('');
-		$('#result').empty();  
-	  });
-	  $('#rookie').click(function () {
+	    	  $('#rookie').click(function () {
 		  urlss = urls + '/events/' + data['rookie_year'].toString();
 		  console.log(urlss);
 		  /*$.ajax({
@@ -82,6 +74,14 @@
 			'X-TBA-Auth-Key': 'u2kDTQPh5Kgn7cOTKTsIzmqoT0KsXBq3PO5U0BeSQgSb7k1kakV6ElfYC0pLCBEf'},
 		    method: 'GET',
 		    dataType: 'json',});*/
+	  });
+		}
+	      });
+	    }
+	  });
+          $('#clear').click(function () {
+		$('#teamNum').val('');
+		$('#result').empty();  
 	  });
 	    });
   </script>
