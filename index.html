@@ -66,6 +66,8 @@
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 	    	  $('#rookie').click(function () {
+		   var inputty = $('#teamNum').val();
+        	   var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
 		   var urlss = urls + '/events/' + data['rookie_year'].toString();
 		  console.log(urlss);
 		  $.ajax({
