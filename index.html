@@ -80,7 +80,7 @@
 		    success: function(datas) {
 		    	for(var codes in datas) {
 				var doc = new jsPDF();
-			if(datas[codes] !== null  & jQuery.type(datas[codes]) !== 'object') {
+			if(datas[codes] !== null ) {
 				var code = codes.toString();
 				code = code.toLowerCase().replace(/\b[a-z]/g, function(letter) {
     					return letter.toUpperCase();
