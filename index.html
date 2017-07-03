@@ -69,9 +69,11 @@
 			$('#teamNum').val('');
 			$('#result').empty(); 
 		   var inputty = $('#teamNum').val();
+		   console.log(inputty);
         	   var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
 		   var urlss = urls + '/events/' + data['rookie_year'].toString();
 		  console.log(urlss);
+			  
 		  $.ajax({
 		    url: urlss,
 		    headers: {
