@@ -81,7 +81,7 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var code in datas) {
-				console.log(data[codes]);
+				console.log(data[code]);
 			  if(datas[code] !== null & jQuery.type(datas[code]) !== 'object') {
 	  		    $('#result').append("<dt class='title' id='" + code + "' style='text-transform: capitalize;'>" + code + "</dt><dd class='definition' id='" + key + "'>" + datas[code] + "</dd>");
 			}}
