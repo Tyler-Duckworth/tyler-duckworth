@@ -70,7 +70,7 @@
 			$('#result').empty(); 
 		   console.log(inputty);
         	   var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
-		   var urlss = urls + '/events/' + data['rookie_year'].toString();
+		   var urlss = urls + '/events/' + data['rookie_year'].toString() + '/simple';
 		  console.log(urlss);
 			  
 		  $.ajax({
@@ -82,7 +82,7 @@
 		    success: function(datas) {
 		    	for(var code in datas) {
 				console.log(data[code]);
-			  if(datas[code] !== null & jQuery.type(datas[code]) !== 'object') {
+			  if(datas[code] !== null ) {
 	  		    $('#result').append("<dt class='title' id='" + code + "' style='text-transform: capitalize;'>" + code + "</dt><dd class='definition' id='" + key + "'>" + datas[code] + "</dd>");
 			}}
 			
