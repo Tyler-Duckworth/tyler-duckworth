@@ -81,10 +81,11 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var code in datas) {
-				console.log(data[code]);
-			  if(datas[code] !== null ) {
-	  		    $('#result').append("<dt class='title' id='" + code + "' style='text-transform: capitalize;'>" + code + "</dt><dd class='definition' id='" + key + "'>" + datas[code] + "</dd>");
-			}}
+			  for(var codex in code) {
+			   console.log(datas[code[codex]]);
+			  if(datas[code[codex]] !== null ) {
+	  		    $('#result').append("<dt class='title' id='" + codex + "' style='text-transform: capitalize;'>" + codex + "</dt><dd class='definition' id='" + key + "'>" + datas[code[codex]] + "</dd>");
+			}}}
 			
 		    }
 		  });
