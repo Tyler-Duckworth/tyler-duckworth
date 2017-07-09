@@ -33,13 +33,7 @@
 	<dl id="result"></dl>
   <script> 
 	 $(document).ready(function() {
-		 var isPressed;
 		$('#button').click(function() {
-			isPressed = true;
-			if(isPressed === true & $('#button').click()) {
-				$('#result').empty();
-				isPressed = false;
-	 		}
 			var inputty = $('#teamNum').val();
 			if (inputty !== undefined) {
 		var sputty = String(inputty);
@@ -66,6 +60,11 @@
 			keys = key;     
 		     }
 		    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
+	      	    var isPrinted = true;
+		    if(inputty !== $('#teamNum').val() & isPrinted = true) {
+			    $('#result').empty();
+			    isPrinted = false;
+		    }
 	      }
 	    }
 	    var dates = JSON.stringify(data);
