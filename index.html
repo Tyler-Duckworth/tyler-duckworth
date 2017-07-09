@@ -80,7 +80,9 @@
 		    success: function(datas) {
 		    	for(var j = 0; j < datas.length; j++) {
 			    for(var i in datas[j]){
-			      console.log(datas[j[i]]);
+			      var arrays = datas[j[i]];
+			      arrays.makeArray();
+			      console.log(arrays);
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + i + "</dt><dd class='definition' id='" + i + "'>" + datas[j[i]] + "</dd>");
 			}}
 			
