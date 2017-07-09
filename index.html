@@ -79,7 +79,7 @@
 		    dataType: 'json',
 		    success: function(datas) {
 		    	for(var j = 0; j < datas.length; j++) {
-			      var arrays = datas[j];
+			      var arrays = datas;
 			      arrays.makeArray();
 			      console.log(arrays);
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + i + "</dt><dd class='definition' id='" + i + "'>" + datas[j[i]] + "</dd>");
