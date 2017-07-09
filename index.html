@@ -78,12 +78,10 @@
 		    method: 'GET',
 		    dataType: 'json',
 		    success: function(datas) {
-		    	for(var code in datas) {
-			  for(var codex in code) {
-			    for(var i in codex) {
-			      console.log(datas[code[codex[i]]]);
-	  		      $('#result').append("<dt class='title' id='" + codex + "' style='text-transform: capitalize;'>" + i + "</dt><dd class='definition' id='" + i + "'>" + datas[code[codex[i]]] + "</dd>");
-			}}}
+		    	for(var j = 0; j < datas.length; j++) {
+			      console.log(datas[j]]);
+	  		      $('#result').append("<dt class='title' id='" + j + "' style='text-transform: capitalize;'>" + j + "</dt><dd class='definition' id='" + j + "'>" + datas[j]] + "</dd>");
+			}
 			
 		    }
 		  });
