@@ -27,14 +27,19 @@
     <label>Team Number: </label>
     <input type="text" id="teamNum" value="" class="testss"/>
     <button id="button" class="button">Search</button>
-	  <button id="clear" class="clear">Clear</button>
     <button id="rookie">Rookie Events</button>
   </p>
   <p id="myResult"></p>
 	<dl id="result"></dl>
   <script> 
 	 $(document).ready(function() {
+		 var isPressed;
 		$('#button').click(function() {
+			isPressed = true;
+			if(isPressed === true & $('#button').click();) {
+				$('#result').empty();
+				isPressed = false;
+	 		}
 			var inputty = $('#teamNum').val();
 			if (inputty !== undefined) {
 		var sputty = String(inputty);
@@ -66,7 +71,6 @@
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
 	    	  $('#rookie').click(function () {
-			$('#teamNum').val('');
 			$('#result').empty(); 
 		   console.log(inputty);
         	   var urls = 'https://www.thebluealliance.com/api/v3/team/frc' + inputty.toString();
@@ -93,10 +97,6 @@
 		}
 	      });
 	    }
-	  });
-          $('#clear').click(function () {
-		$('#teamNum').val('');
-		$('#result').empty();  
 	  });
 	    });
   </script>
