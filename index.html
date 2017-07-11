@@ -82,7 +82,14 @@
 			  for(var i in datas[j]) {
 			      console.log(datas[j][i]);
 			      if(datas[j][i] !== null & jQuery.type(datas[j][i]) !== 'object') {
-			      var js = datas[j][i];
+		              var js = datas[j][i];
+			      var is;
+			      if(i.indexOf('_prov') != -1) {
+				 is = i.replace('_prov', '');
+			      }
+			      else if(i.indexOf('_') != -1) {
+				      is = i.replace('_' ' ');
+			      }
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + i + "</dt><dd class='definition' id='" + i + "'>" + js + "</dd>");
 			}}}
 			
