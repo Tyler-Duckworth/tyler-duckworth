@@ -80,9 +80,9 @@
 		    success: function(datas) {
 		    	for(var j = 0; j < datas.length; j++) {
 			  for(var i in datas[j]) {
-			      console.log(datas[j[i]]);
-			      if(datas[j[i]] !== null & jQuery.type(datas[j[i]]) !== 'object') {
-			      var js = datas[j[i]];
+			      console.log(datas[j][i]);
+			      if(datas[j][i] !== null & jQuery.type(datas[j][i]) !== 'object') {
+			      var js = datas[j][i];
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + i + "</dt><dd class='definition' id='" + i + "'>" + js + "</dd>");
 			}}}
 			
