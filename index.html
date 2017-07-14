@@ -60,7 +60,12 @@
 		     else {
 			keys = key;     
 		     }
+		     if(data[key].indexOf('http') != -1 | data[key].indexOf('https') != -1 | data[key].indexOf('www') != -1) {
+		      $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'><a href='" + data[key] + "'>" + data[key] + "</a></dd>");
+	     }
+		     else {
 		    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
+	      }
 	      }
 	    }
 	    var dates = JSON.stringify(data);
@@ -94,8 +99,12 @@
                   else {
                       is = i;
                   }
+		  if(datas[j][i].indexOf('http') != -1 | datas[j][i].indexOf('https') != -1 | datas[j][i].indexOf('www') != -1) {
+		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i + "'><a href='" + datas[j][i] + "'>" + datas[j][i] + "</a></dd>");
+	     }
+		else {
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i + "'>" + js + "</dd>");
-			}}}
+			}}}}
 			
 		    }
 		  });
