@@ -60,7 +60,7 @@
 		     else {
 			keys = key;     
 		     }
-		     if(data[key].toString.indexOf('http') != -1 | data[key].indexOf('https') != -1 | data[key].indexOf('www') != -1) {
+		     if(data[key].toString().indexOf('http') != -1 | data[key].indexOf('https') != -1 | data[key].indexOf('www') != -1) {
 		      $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'><a href='" + data[key] + "'>" + data[key] + "</a></dd>");
 	     }
 		     else {
