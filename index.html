@@ -60,12 +60,13 @@
 		     else {
 			keys = key;     
 		     }
-		     if(data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('http') != null | data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('https') != null | data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('www') != null) {
+		     /*if(data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('http') != null | data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('https') != null | data[key].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('www') != null) {
 		      $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'><a href='" + data[key] + "'>" + data[key] + "</a></dd>");
 	     }
 		     else {
 		    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
-	      }
+	      }*/
+		      		      $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'><a href='" + data[key] + "'>" + data[key] + "</a></dd>");
 	      }
 	    }
 	    var dates = JSON.stringify(data);
