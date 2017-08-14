@@ -100,12 +100,12 @@
                   else {
                       is = i;
                   }
-		  /*if(datas[j][i].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('http') != null | datas[j][i].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('https') != null | datas[j][i].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('www') != null) {
+		  if(datas[j][i].toString().replace('https://tyler-duckworth.github.io/tyler-duckworth/', '').includes('http') != null | datas[j][i].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('https') != null | datas[j][i].toString().remove('https://tyler-duckworth.github.io/tyler-duckworth/').includes('www') != null) {
 		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i + "'><a href='" + datas[j][i] + "'>" + datas[j][i] + "</a></dd>");
 	     }
 		else {
 	  		      $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i + "'>" + js + "</dd>");
-			}*/
+			}
 			  $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i + "'><a href='" + datas[j][i] + "'>" + datas[j][i] + "</a></dd>");     
 			 }}}
 			
