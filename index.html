@@ -61,7 +61,7 @@
 			keys = key;     
 		     }
 		     if(keys == 'Website') {
-			    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
+			    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'><a href='" + data[key] + "'>" + data[key] +"</a></dd>");
 		     }
 		     else {
 			
