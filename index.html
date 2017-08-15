@@ -60,8 +60,13 @@
 		     else {
 			keys = key;     
 		     }
+		     if(keys == 'Website') {
+			    $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
+		     }
+		     else {
+			
 		     $('#result').append("<dt class='title' id='" + key + "' style='text-transform: capitalize;'>" + keys + "</dt><dd class='definition' id='" + key + "'>" + data[key] + "</dd>");
-	      }
+	      }}
 	    }
 	    var dates = JSON.stringify(data);
 	    $('#myResult').append(data);
@@ -94,7 +99,7 @@
                   else {
                       is = i;
                   }
-			  $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i +"'>" + datas[j][i] + "</dd>");     
+			  $('#result').append("<dt class='title' id='" + i + "' style='text-transform: capitalize;'>" + is + "</dt><dd class='definition' id='" + i +"'><a href='" + datas[j][i] + "'>" + datas[j][i] + "</a></dd>");     
 			 }}}
 			
 		    }
